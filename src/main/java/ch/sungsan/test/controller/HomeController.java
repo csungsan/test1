@@ -1,4 +1,4 @@
-package ch.sungsan.test;
+package ch.sungsan.test.controller;
 
 import java.text.DateFormat;
 import java.util.Date;
