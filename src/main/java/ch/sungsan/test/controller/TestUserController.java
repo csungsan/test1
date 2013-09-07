@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import ch.sungsan.test.model.TestUserVo;
 
 @Controller
-@RequestMapping(value = "user", method = RequestMethod.GET)
+@RequestMapping(value = "users", method = RequestMethod.GET)
 public class TestUserController {
 
 	@RequestMapping(value = "{user_id}", method = RequestMethod.GET)
