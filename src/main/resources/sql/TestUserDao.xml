@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="ch.sungsan.test.dao.TestUserDao">
+
+	<resultMap id="TestUsetVo" type="TestUsetVo">
+		<result column="user_id" property="userId" />
+		<result column="user_name" property="name" />
+		<result column="user_address" property="address" />
+		<result column="user_age" property="age" />
+	</resultMap>
+
+	<select id="getTestUserList" resultMap="TestUsetVo">
+		select user_id, user_name, user_address, user_age
+		from test_user;
+	</select>
+	
+	<select id="getTestUser" parameterType="int" resultMap="TestUsetVo">
+		select user_id, user_name, user_address, user_age
+		from test_user
+		where user_id = #{userId}
+	</select>
+	
+	<insert id="postTestUser" parameterType="TestUsetVo" useGeneratedKeys="true"
+		keyProperty="userId" keyColumn="user_id">
+		INSERT INTO test_user(user_name, user_address, user_age) VALUES
+			(#{userName}, #{userAddress}, #{userAge})		
+		<selectKey keyProperty="userId" resultType="int" order="AFTER">
+			SELECT LAST_INSERT_ID()
+		</selectKey>
+	</insert>
+		
+	<update id="putTestUser" parameterType="TestUsetVo">
+		update test_user set
+			user_name = #{userName},
+			user_address = #{userAddress},
+			user_age = #{userAge}
+		where user_id = #{userId}
+	</update>	
+</mapper>
