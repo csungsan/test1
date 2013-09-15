@@ -4,7 +4,7 @@ public class TestUserVo {
 
 	private int userId;
 	private String name;
-	private String addrerss;
+	private String address;
 	private int age;
 
 	public int getUserId() {
@@ -23,12 +23,12 @@ public class TestUserVo {
 		this.name = name;
 	}
 
-	public String getAddrerss() {
-		return addrerss;
+	public String getAddress() {
+		return address;
 	}
 
-	public void setAddrerss(String addrerss) {
-		this.addrerss = addrerss;
+	public void setAddress(String address) {
+		this.address = address;
 	}
 
 	public int getAge() {

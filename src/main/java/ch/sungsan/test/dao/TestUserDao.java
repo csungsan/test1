@@ -16,7 +16,9 @@ public interface TestUserDao {
 			@Param("userAddress") String userAddress, 
 			@Param("userAge") int userAge);
 	
-	public int putTestUser(@Param("userName") String userName, 
+	public int putTestUser(
+			@Param("userId") int userId,
+			@Param("userName") String userName, 
 			@Param("userAddress") String userAddress, 
 			@Param("userAge") int userAge);
 	
